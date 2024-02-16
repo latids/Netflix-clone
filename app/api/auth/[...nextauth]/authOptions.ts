@@ -41,7 +41,7 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (!user || !user.hashedPassword) {
-          return null //fix for sending user to error page, instead user stays at /auth route 
+          throw new Error("User not found"); 
         }
 
         const isCorrectPassword = await compare(
