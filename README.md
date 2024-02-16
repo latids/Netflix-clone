@@ -3,7 +3,7 @@
 - live demo "https://netflix-project-eosin-nu.vercel.app/auth"
   
 ## Overview
-This project is a clone of the Netflix. Users can watch movies directly from the main home screen due to limited number of movies in db.
+This project is a clone of the Netflix. Users can only watch movies directly from the main home screen due to limited number of movies in db.
 
 ## Technologies Used
 - Next.js
