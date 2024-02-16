@@ -41,7 +41,7 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (!user || !user.hashedPassword) {
-          throw new Error("Email does not exist");
+          return null //fix for sending user to error page, instead user stays at /auth route 
         }
 
         const isCorrectPassword = await compare(
