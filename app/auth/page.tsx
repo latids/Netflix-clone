@@ -95,8 +95,14 @@ const Auth = () => {
         password,
       });
       login();
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      if (error.isAxiosError && error.response?.status === 409) {
+        setRegisterErrors(["Email is already taken"]);
+      } else {
+        console.error("Registration error:", error);
+      }
+    } finally {
+      setIsRegistering(false);
     }
   }, [email, isRegistering, login, name, password]);
 
